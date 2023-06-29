@@ -4,11 +4,11 @@ import "./Pagination.css";
 const Pagination = ({ setPageNumber, setPerPageNumber }) => {
   return (
     <div>
-      <div className="page flex flex-row gap-12">
+      <div className="page flex flex-row gap-10 justify-content-center items-center">
         <button onClick={() => setPageNumber("1")}>1</button>
         <button onClick={() => setPageNumber("2")}>2</button>
-        <div className="flex flex-row gap-2 justify-content-center items-center">
-          <label htmlFor="perPage">Items Per Page</label>
+        <div className="flex lg:flex-row flex-col gap-2 justify-content-center items-center">
+          <label htmlFor="perPage">Employees Per Page</label>
           <select
             name="perPage"
             id="perPage"
