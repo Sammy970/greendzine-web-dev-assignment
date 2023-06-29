@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import EmployeeList from "../src/components/EmployeeList";
-import SearchBox from "../src/components/SearchBox";
-import Pagination from "../src/components/Pagination";
+import EmployeeList from "./Components/EmployeeList";
+import SearchBox from "./Components/SearchBox";
+import Pagination from "./Components/Pagination";
 
 const App = () => {
   const [employees, setEmployees] = useState([]);
