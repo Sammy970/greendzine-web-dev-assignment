@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import EmployeeList from "./components/EmployeeList";
-import SearchBox from "./components/SearchBox";
-import Pagination from "./components/Pagination";
+import EmployeeList from "../src/components/EmployeeList";
+import SearchBox from "../src/components/SearchBox";
+import Pagination from "../src/components/Pagination";
 
 const App = () => {
   const [employees, setEmployees] = useState([]);
@@ -45,7 +45,10 @@ const App = () => {
       </div>
       {console.log(pageNumber)}
       <div className="py-16">
-        <Pagination setPageNumber={setPageNumber} setPerPageNumber={setPerPageNumber} />
+        <Pagination
+          setPageNumber={setPageNumber}
+          setPerPageNumber={setPerPageNumber}
+        />
       </div>
     </div>
   );
