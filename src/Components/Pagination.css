@@ -1,13 +1,18 @@
 button {
   padding: 4px;
-  background-color: rgb(182, 175, 190);
+  background-color: #3eecac;
+  background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  border: 2px solid black;
 }
 
 select {
   padding: 5px 10px 5px 10px;
-  background-color: rgb(182, 175, 190);
+  background-color: #3eecac;
+  background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
   border-radius: 7px;
+  border: 2px solid black;
 }
+

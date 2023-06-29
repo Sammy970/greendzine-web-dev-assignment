@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import EmployeeList from "./Components/EmployeeList";
 import SearchBox from "./Components/SearchBox";
 import Pagination from "./Components/Pagination";
+import "./App.css";
 
 const App = () => {
   const [employees, setEmployees] = useState([]);
@@ -18,7 +19,6 @@ const App = () => {
       .catch((error) => console.log(error));
   }, [pageNumber, perPageNumber]);
 
-
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -28,7 +28,7 @@ const App = () => {
   );
 
   return (
-    <div className="flex flex-col items-center bg-blue-100 min-h-screen">
+    <div className="flex flex-col items-center bg min-h-screen">
       <div className="py-5">
         <SearchBox handleSearch={handleSearch} searchQuery={searchQuery} />
       </div>
@@ -39,7 +39,11 @@ const App = () => {
           </div>
         ))}
       </div>
-      {console.log(pageNumber)}
+      {filteredEmployees.length === 0 && (
+        <div className="flex-center">
+          <h1>Employee Data Not Found</h1>
+        </div>
+      )}
       <div className="py-16">
         <Pagination
           setPageNumber={setPageNumber}
