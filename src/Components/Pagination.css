@@ -1,7 +1,13 @@
 button {
   padding: 4px;
-  background-color: #3eecac;
-  background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
+  color: whitesmoke;
+  font-size: large;
+  font-weight: bold;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(61, 131, 97, 1) 11.2%,
+    rgba(28, 103, 88, 1) 91.1%
+  );
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -10,9 +16,18 @@ button {
 
 select {
   padding: 5px 10px 5px 10px;
-  background-color: #3eecac;
-  background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
+  color: whitesmoke;
+  font-size: large;
+  font-weight: bold;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(61, 131, 97, 1) 11.2%,
+    rgba(28, 103, 88, 1) 91.1%
+  );
   border-radius: 7px;
   border: 2px solid black;
 }
 
+option {
+  background-color: rgba(61, 131, 97, 1);
+}
