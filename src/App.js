@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from "react";
 import EmployeeList from "./components/EmployeeList";
 import SearchBox from "./components/SearchBox";
+import Pagination from "./components/Pagination";
 
 const App = () => {
   const [employees, setEmployees] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [pageNumber, setPageNumber] = useState("1");
+  const [perPageNumber, setPerPageNumber] = useState("5");
 
   useEffect(() => {
-    fetch("https://reqres.in/api/users?page=2")
+    fetch(`https://reqres.in/api/users?page=${pageNumber}`)
       .then((response) => response.json())
       .then((data) => setEmployees(data.data))
       .catch((error) => console.log(error));
-  }, []);
+  }, [pageNumber]);
+
+  useEffect(() => {
+    fetch(`https://reqres.in/api/users?per_page=${perPageNumber}`)
+      .then((response) => response.json())
+      .then((data) => setEmployees(data.data))
+      .catch((error) => console.log(error));
+  }, [perPageNumber]);
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -32,6 +42,10 @@ const App = () => {
             <EmployeeList employee={employee} />
           </div>
         ))}
+      </div>
+      {console.log(pageNumber)}
+      <div className="py-16">
+        <Pagination setPageNumber={setPageNumber} setPerPageNumber={setPerPageNumber} />
       </div>
     </div>
   );
