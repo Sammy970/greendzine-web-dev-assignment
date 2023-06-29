@@ -16,14 +16,8 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => setEmployees(data.data))
       .catch((error) => console.log(error));
-  }, [pageNumber]);
+  }, [pageNumber, perPageNumber]);
 
-  useEffect(() => {
-    fetch(`https://reqres.in/api/users?per_page=${perPageNumber}`)
-      .then((response) => response.json())
-      .then((data) => setEmployees(data.data))
-      .catch((error) => console.log(error));
-  }, [perPageNumber]);
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
