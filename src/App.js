@@ -10,7 +10,9 @@ const App = () => {
   const [perPageNumber, setPerPageNumber] = useState("5");
 
   useEffect(() => {
-    fetch(`https://reqres.in/api/users?page=${pageNumber}`)
+    fetch(
+      `https://reqres.in/api/users?page=${pageNumber}&per_page=${perPageNumber}`
+    )
       .then((response) => response.json())
       .then((data) => setEmployees(data.data))
       .catch((error) => console.log(error));
