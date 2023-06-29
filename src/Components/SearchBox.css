@@ -1,0 +1,11 @@
+.searchBox {
+  outline: none;
+  padding: 10px;
+  border-radius: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.searchBox::placeholder {
+  font-size: large;
+}

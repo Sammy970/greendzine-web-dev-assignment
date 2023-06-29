@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import EmployeeList from "./Components/EmployeeList";
-import SearchBox from "./Components/SearchBox";
+import EmployeeList from "./components/EmployeeList";
+import SearchBox from "./components/SearchBox";
 
 const App = () => {
   const [employees, setEmployees] = useState([]);
@@ -22,9 +22,17 @@ const App = () => {
   );
 
   return (
-    <div>
-      <SearchBox handleSearch={handleSearch} searchQuery={searchQuery} />
-      <EmployeeList employees={filteredEmployees} />
+    <div className="flex flex-col items-center bg-blue-100 min-h-screen">
+      <div className="py-5">
+        <SearchBox handleSearch={handleSearch} searchQuery={searchQuery} />
+      </div>
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 lg:md:gap-14 gap-10">
+        {filteredEmployees.map((employee) => (
+          <div key={employee.id}>
+            <EmployeeList employee={employee} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
